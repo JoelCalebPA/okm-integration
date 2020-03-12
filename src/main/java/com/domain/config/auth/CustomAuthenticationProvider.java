@@ -12,11 +12,28 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Service;
 
 import com.domain.cache.WSCacheDAO;
 import com.openkm.sdk4j.OKMWebservices;
 import com.openkm.sdk4j.bean.CommonUser;
 
+/**
+ * Implements method from AuthenticationProvider in order to capture and store the password from spring-security
+ * objects.
+ * It returns an Authentication object filled with username, password and roles assigned to the user. This case,
+ * this method intercepts Authentication process from spring-security, contacts to OKM using webservices calls and sets
+ * roles to the user. It also stores OKM ws object in cache and it is also able to store somewhere credentials for
+ * further access by means of SecurityContextHolder
+ * <p>
+ * http://www.baeldung.com/spring-security-authentication-provider and http://www.baeldung.com/spring-security-login for
+ * configuration
+ * <p>
+ * It is also possible to extend DAOAuthenticationProvider
+ * (http://stackoverflow.com/questions/18220556/how-to-implement-custom-authentication-in-spring-security-3#comment27182355_18224564)
+ */
+
+@Service
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	private static final Logger log = LoggerFactory.getLogger(CustomAuthenticationProvider.class);

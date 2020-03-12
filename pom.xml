@@ -122,10 +122,18 @@
 	</dependencies>
 
 	<build>
+		<finalName>okm-integration</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<outputDirectory>D:/APACHE/apache-tomcat-8.5.40/webapps</outputDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
