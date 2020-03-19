@@ -9,8 +9,9 @@
 </head>
 <body>
 	<jsp:include page="../../include/menu.jsp" />
-	<div class="container">
-		<div class="jumbotron">
+	<div class="row-custom">
+		<jsp:include page="tasks.jsp"></jsp:include>
+		<div class="rightcolumn">
 			<form action="">
 				<c:forEach var="field" items="${ fields }">
 					<wf:workflow-field workflowField="${ field }"></wf:workflow-field>

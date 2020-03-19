@@ -17,14 +17,14 @@
 		<%
 			TextArea textarea = (TextArea) workflowField;
 		%>
-		<f:textarea textarea="<%=textarea%>"></f:textarea>
+		<f:textarea textarea="<%=textarea%>"></f:textarea><br/>
 	</c:when>
 
 	<c:when test="${workflowField.objClass.contains('Select')}">
 		<%
 			Select select = (Select) workflowField;
 		%>
-		<f:select select="<%=select%>"></f:select>
+		<f:select select="<%=select%>"></f:select><br/>
 	</c:when>
 
 	<c:when test="${workflowField.objClass.contains('Button')}">

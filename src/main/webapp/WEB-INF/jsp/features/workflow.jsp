@@ -7,14 +7,8 @@
 </head>
 <body>
 	<jsp:include page="../include/menu.jsp" />
-	<div class="container">
-		<div class="jumbotron">
-			<h2>Tasks</h2>
-			<c:forEach var="task" items="${ tasks }">
-				<li class="vertical-gap"><a
-					href="<c:url value="/features/workflow/task?tiId=${ task.id }" />">${ task.name }</a></li>
-			</c:forEach>
-		</div>
+	<div class="row-custom">
+		<jsp:include page="workflow/tasks.jsp"></jsp:include>
 	</div>
 </body>
 </html>

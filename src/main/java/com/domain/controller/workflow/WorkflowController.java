@@ -39,6 +39,7 @@ public class WorkflowController {
 			TaskInstance instance = workflowService.getTaskInstance(tiId);
 			List<FormElement> fes = workflowService.getTaskForm(instance.getProcessDefinitionId(), instance.getName());
 			model.addAttribute("fields", fes);
+			model.addAttribute("tasks", workflowService.getUserTasks());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

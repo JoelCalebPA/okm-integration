@@ -17,21 +17,14 @@
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="<c:url value="/"/>">Home</a></li>
-				<sec:authorize access="hasRole('CATALOG')">
-					<li><a href="<c:url value="/catalog/next"/>">Catalog</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ADMIN')">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> Admin <span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/admin/home'/>">Home</a></li>
-						</ul></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ADMIN')">
-					<li><a href="<c:url value="/features/workflow"/>">Workflow</a></li>
-				</sec:authorize>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false"> Admin <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="<c:url value='/admin/home'/>">Home</a></li>
+					</ul></li>
+				<li><a href="<c:url value="/features/workflow"/>">Workflow</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<c:choose>
